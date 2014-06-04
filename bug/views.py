@@ -12,7 +12,7 @@ import json
 
 
 def trend(request):
-    return render(request,'bug/trend.html')
+    return render(request,'trend.html')
 
 
 
