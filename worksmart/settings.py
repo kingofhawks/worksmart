@@ -79,5 +79,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
+#You could put application specific static files under app's static subdirectory
 STATIC_URL = '/static/'
+
+
+# Additional locations of global static files used by whole project
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    #define the global static files folder here,default put all under project's static folder!
+    os.path.join(BASE_DIR, "static"),
+)
+

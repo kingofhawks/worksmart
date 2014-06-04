@@ -44,7 +44,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/worksmart/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="23" selection-start="1991" selection-end="1991" vertical-scroll-proportion="0.0" vertical-offset="1146" max-vertical-offset="1710">
+            <state line="91" column="37" selection-start="2484" selection-end="2484" vertical-scroll-proportion="0.0" vertical-offset="1162" max-vertical-offset="1900">
               <folding />
             </state>
           </provider>
@@ -53,7 +53,7 @@
       <file leaf-file-name="trend.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bug/templates/trend.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="14" selection-start="79" selection-end="79" vertical-scroll-proportion="0.21150278" vertical-offset="0" max-vertical-offset="539">
+            <state line="9" column="12" selection-start="352" selection-end="352" vertical-scroll-proportion="0.3172542" vertical-offset="0" max-vertical-offset="798">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bug/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="32" selection-start="333" selection-end="338" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="494">
+            <state line="13" column="19" selection-start="315" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="475">
               <folding />
             </state>
           </provider>
@@ -120,9 +120,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/bug/urls.py" />
         <option value="$PROJECT_DIR$/worksmart/urls.py" />
-        <option value="$PROJECT_DIR$/worksmart/settings.py" />
         <option value="$PROJECT_DIR$/templates/bug/trend.html" />
         <option value="$PROJECT_DIR$/bug/views.py" />
+        <option value="$PROJECT_DIR$/worksmart/settings.py" />
         <option value="$PROJECT_DIR$/bug/templates/trend.html" />
       </list>
     </option>
@@ -514,13 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/worksmart/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="23" selection-start="1991" selection-end="1991" vertical-scroll-proportion="0.0" vertical-offset="1146" max-vertical-offset="1710">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bug/redmine.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="27" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
@@ -530,14 +523,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bug/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="32" selection-start="333" selection-end="338" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="494">
+        <state line="13" column="19" selection-start="315" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1544" column="23" selection-start="24900" selection-end="24900" vertical-scroll-proportion="0.33333334" vertical-offset="29147" max-vertical-offset="72257">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worksmart/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="37" selection-start="2484" selection-end="2484" vertical-scroll-proportion="0.0" vertical-offset="1162" max-vertical-offset="1900">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bug/templates/trend.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="14" selection-start="79" selection-end="79" vertical-scroll-proportion="0.21150278" vertical-offset="0" max-vertical-offset="539">
+        <state line="9" column="12" selection-start="352" selection-end="352" vertical-scroll-proportion="0.3172542" vertical-offset="0" max-vertical-offset="798">
           <folding />
         </state>
       </provider>
