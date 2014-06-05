@@ -7,5 +7,8 @@ class BugStatistics(models.Model):
     open = models.SmallIntegerField()
     date = models.DateField()
 
+    class Meta:
+        ordering = ['date']
+
 
 
