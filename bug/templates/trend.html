@@ -35,6 +35,7 @@
             $.get("{% url 'trend_data' %}",function(d){
                 console.log(d)
                 var arrayLength = d.length;
+                console.log(arrayLength)
                 for (var i = 0; i < arrayLength; i++) {
                     console.log(d[i]);
                     //Do something
@@ -46,11 +47,23 @@
                     width: 580,
                     height: 250,
                     series: [{
+                        name:'total',
                         color: 'steelblue',
                         data: data
                     }]
                 });
                 var axes = new Rickshaw.Graph.Axis.Time( { graph: graph } );
+
+                var format = function(d) {
+                    d = new Date(d)
+                    console.log(d)
+                    return d3.time.format("%b")(d)
+                }
+{#                var x_axis = new Rickshaw.Graph.Axis.X({#}
+{#                        graph: graph,#}
+{#                        tickFormat: format#}
+{#                });#}
+
                 var y_axis = new Rickshaw.Graph.Axis.Y( {
                         graph: graph,
                         orientation: 'left',
@@ -58,6 +71,10 @@
                         element: document.querySelector("#y_axis")
                 } );
                 graph.render();
+
+                var hoverDetail = new Rickshaw.Graph.HoverDetail( {
+                    graph: graph
+                } );
             });
 
         });
