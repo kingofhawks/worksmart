@@ -7,4 +7,5 @@ urlpatterns = patterns('',
     url(r'^$', views.trend, name='trend'),
     url(r'^trend_data/$', views.trend_data, name='trend_data'),
     url(r'^percentage/$', views.percentage, name='percentage'),
+    url(r'^percentage_data/$', views.percentage_data, name='percentage_data'),
 )

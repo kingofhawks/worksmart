@@ -48,24 +48,19 @@ def percentage_data(request):
     from django.core import serializers
     query_set = BugStatistics.objects.all()
     #data = serializers.serialize("json", query_set)
-    total_bugs = []
-    closed_bugs = []
+    percentage = []
     result = []
 
     for bug in query_set:
-        #print bug
-        #total_bugs.append({'x':bug.date,'y':bug.total})
-        #closed_bugs.append({'x':bug.date,'y':bug.closed}
-        date_epoch = arrow.get(bug.date).timestamp
-        total_bugs.append({'x':date_epoch,'y':bug.total})
-        closed_bugs.append({'x':date_epoch,'y':bug.closed})
-    result = [{'name':'total','color': 'lightblue','data':total_bugs},{'name':'closed','color': 'steelblue','data':closed_bugs}]
+        percent = float(bug.closed)/bug.total
+        percentage.append({'date':bug.date.date(),'close': '{:.2f}'.format(percent)})
+    result = [{'name':'percentage','color': 'steelblue','data':percentage}]
     print result
 
     #json.dumps do not work with DateTime object type,need to use DjangoJSONEncoder
 
     from django.core.serializers.json import DjangoJSONEncoder
-    return HttpResponse(json.dumps(result, cls=DjangoJSONEncoder), mimetype="application/json")
+    return HttpResponse(json.dumps(percentage, cls=DjangoJSONEncoder), mimetype="application/json")
 
 
 

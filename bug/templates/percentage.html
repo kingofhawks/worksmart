@@ -37,7 +37,7 @@
             width = 960 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
-            var parseDate = d3.time.format("%d-%b-%y").parse;
+            var format = d3.time.format("%Y-%m-%d");
 
             var x = d3.time.scale()
                 .range([0, width]);
@@ -63,9 +63,11 @@
               .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            d3.tsv("{% static "data.tsv" %}", function(error, data) {
+            d3.json("{% url 'percentage_data' %}", function(error, data) {
+              console.log(data);
               data.forEach(function(d) {
-                d.date = parseDate(d.date);
+                console.log(d);
+                d.date = format.parse(d.date);
                 d.close = +d.close;
               });
 
@@ -85,7 +87,7 @@
                   .attr("y", 6)
                   .attr("dy", ".71em")
                   .style("text-anchor", "end")
-                  .text("Price ($)");
+                  .text("Percentage (%)");
 
               svg.append("path")
                   .datum(data)
@@ -99,11 +101,6 @@
 </head>
 <body>
 <p>Bug Trends</p>
-
-<div id="chart_container">
-        <div id="y_axis"></div>
-        <div id="chart"></div>
-</div>
 
 </body>
 </html>
