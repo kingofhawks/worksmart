@@ -6,4 +6,5 @@ urlpatterns = patterns('',
     # url(r'^$', 'worksmart.views.home', name='home'),
     url(r'^$', views.trend, name='trend'),
     url(r'^trend_data/$', views.trend_data, name='trend_data'),
+    url(r'^percentage/$', views.percentage, name='percentage'),
 )

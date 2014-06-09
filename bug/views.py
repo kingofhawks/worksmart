@@ -33,7 +33,33 @@ def trend_data(request):
         date_epoch = arrow.get(bug.date).timestamp
         total_bugs.append({'x':date_epoch,'y':bug.total})
         closed_bugs.append({'x':date_epoch,'y':bug.closed})
-    result = [{'name':'total','color': 'steelblue','data':total_bugs},{'name':'closed','color': 'red','data':closed_bugs}]
+    result = [{'name':'total','color': 'lightblue','data':total_bugs},{'name':'closed','color': 'steelblue','data':closed_bugs}]
+    print result
+
+    #json.dumps do not work with DateTime object type,need to use DjangoJSONEncoder
+
+    from django.core.serializers.json import DjangoJSONEncoder
+    return HttpResponse(json.dumps(result, cls=DjangoJSONEncoder), mimetype="application/json")
+
+def percentage(request):
+    return render(request,'percentage.html')
+
+def percentage_data(request):
+    from django.core import serializers
+    query_set = BugStatistics.objects.all()
+    #data = serializers.serialize("json", query_set)
+    total_bugs = []
+    closed_bugs = []
+    result = []
+
+    for bug in query_set:
+        #print bug
+        #total_bugs.append({'x':bug.date,'y':bug.total})
+        #closed_bugs.append({'x':bug.date,'y':bug.closed}
+        date_epoch = arrow.get(bug.date).timestamp
+        total_bugs.append({'x':date_epoch,'y':bug.total})
+        closed_bugs.append({'x':date_epoch,'y':bug.closed})
+    result = [{'name':'total','color': 'lightblue','data':total_bugs},{'name':'closed','color': 'steelblue','data':closed_bugs}]
     print result
 
     #json.dumps do not work with DateTime object type,need to use DjangoJSONEncoder
