@@ -29,36 +29,39 @@
 
     <script>
         $(document).ready(function(){
-            var data = [ { x: -1893456000, y: 92228531 }, { x: -1577923200, y: 106021568 }, { x: -1262304000, y: 123202660 }, { x: -946771200, y: 132165129 }, { x: -631152000, y: 151325798 }, { x: -315619200, y: 179323175 }, { x: 0, y: 203211926 }, { x: 315532800, y: 226545805 }, { x: 631152000, y: 248709873 }, { x: 946684800, y: 281421906 }, { x: 1262304000, y: 308745538 } ];
-            data = []
+{#            var data = [ { x: -1893456000, y: 92228531 }, { x: -1577923200, y: 106021568 }, { x: -1262304000, y: 123202660 }, { x: -946771200, y: 132165129 }, { x: -631152000, y: 151325798 }, { x: -315619200, y: 179323175 }, { x: 0, y: 203211926 }, { x: 315532800, y: 226545805 }, { x: 631152000, y: 248709873 }, { x: 946684800, y: 281421906 }, { x: 1262304000, y: 308745538 } ];#}
+{#            data = []#}
 
             $.get("{% url 'trend_data' %}",function(d){
-                console.log(d)
-                var arrayLength = d.length;
-                console.log(arrayLength)
-                for (var i = 0; i < arrayLength; i++) {
-                    console.log(d[i]);
-                    //Do something
-                    data.push( { x: moment(d[i].x).unix(), y: d[i].y } );
-                }
-                console.log(data)
+{#                console.log(d)#}
+{#                var arrayLength = d.length;#}
+{#                console.log(arrayLength)#}
+{#                for (var i = 0; i < arrayLength; i++) {#}
+{#                    console.log(d[i]);#}
+{#                    data.push( { x: moment(d[i].x).unix(), y: d[i].y } );#}
+{#                }#}
+
                 var graph = new Rickshaw.Graph( {
                     element:document.querySelector("#chart"),
                     width: 580,
                     height: 250,
-                    series: [{
-                        name:'total',
-                        color: 'steelblue',
-                        data: data
-                    }]
+                    series: d,
+                    stack:false
                 });
-                var axes = new Rickshaw.Graph.Axis.Time( { graph: graph } );
 
-                var format = function(d) {
-                    d = new Date(d)
-                    console.log(d)
-                    return d3.time.format("%b")(d)
-                }
+                var time = new Rickshaw.Fixtures.Time();
+                var day = time.unit('day');
+                var axes = new Rickshaw.Graph.Axis.Time(
+                        {
+                            graph: graph,
+                            timeUnit:day
+                        } );
+
+{#                var format = function(d) {#}
+{#                    d = new Date(d)#}
+{#                    console.log(d)#}
+{#                    return d3.time.format("%b")(d)#}
+{#                }#}
 {#                var x_axis = new Rickshaw.Graph.Axis.X({#}
 {#                        graph: graph,#}
 {#                        tickFormat: format#}
@@ -82,7 +85,7 @@
 </script>
 </head>
 <body>
-<p id="test">Hello world</p>
+<p id="test">Bug Trends</p>
 
 <div id="chart_container">
         <div id="y_axis"></div>

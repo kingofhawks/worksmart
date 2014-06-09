@@ -5,7 +5,7 @@ class BugStatistics(models.Model):
     total = models.SmallIntegerField()
     closed = models.SmallIntegerField()
     open = models.SmallIntegerField()
-    date = models.DateField()
+    date = models.DateTimeField()
 
     class Meta:
         ordering = ['date']

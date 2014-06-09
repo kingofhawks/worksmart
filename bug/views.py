@@ -12,6 +12,7 @@ import json
 from models import BugStatistics
 import bson
 from bson import json_util
+import arrow
 
 
 def trend(request):
@@ -21,16 +22,24 @@ def trend_data(request):
     from django.core import serializers
     query_set = BugStatistics.objects.all()
     #data = serializers.serialize("json", query_set)
-    bugs = []
+    total_bugs = []
+    closed_bugs = []
+    result = []
+
     for bug in query_set:
         #print bug
-        #print type(bug)
-        bugs.append({'x':bug.date,'y':bug.total})
-    print bugs
+        #total_bugs.append({'x':bug.date,'y':bug.total})
+        #closed_bugs.append({'x':bug.date,'y':bug.closed}
+        date_epoch = arrow.get(bug.date).timestamp
+        total_bugs.append({'x':date_epoch,'y':bug.total})
+        closed_bugs.append({'x':date_epoch,'y':bug.closed})
+    result = [{'name':'total','color': 'steelblue','data':total_bugs},{'name':'closed','color': 'red','data':closed_bugs}]
+    print result
+
     #json.dumps do not work with DateTime object type,need to use DjangoJSONEncoder
-    data = [ { 'x': -1893456000, 'y': 92228531 }, { 'x': -1577923200, 'y': 106021568 } ];
+
     from django.core.serializers.json import DjangoJSONEncoder
-    return HttpResponse(json.dumps(bugs, cls=DjangoJSONEncoder), mimetype="application/json")
+    return HttpResponse(json.dumps(result, cls=DjangoJSONEncoder), mimetype="application/json")
 
 
 
