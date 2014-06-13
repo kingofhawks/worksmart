@@ -1,6 +1,5 @@
 import json
 
-
 def get_bugs():
     base_url = 'http://192.168.153.214:9997/redmine/issues.json?project_id=wxkcsj&offset=0&limit=100&sort=id:desc'
     import requests
@@ -18,13 +17,19 @@ def get_bugs():
     closed_bugs = int(d['total_count'])
     print 'closed bugs:{}'.format(closed_bugs)
     #print len(d['issues'])
-    print 'fix percentage:{}'.format(closed_bugs*1.0/total_bugs)
+    percentage = closed_bugs*1.0/total_bugs
+    print 'fix percentage:{}'.format(percentage)
     r = requests.get(base_url+'&status_id=open')
     d = json.loads(r.text.encode('utf-8'))
     print 'open bugs:{}'.format(d['total_count'])
     #print len(d['issues'])
+    import arrow
+
+    return {'total':total_bugs,'closed':closed_bugs,'percentage':percentage,'open':d['total_count'],'date':arrow.now().datetime}
+
 
 if __name__ == '__main__':
-    get_bugs()
+    bug = get_bugs()
+    print bug
 
 

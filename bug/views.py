@@ -1,9 +1,5 @@
-from django.shortcuts import render
-
-# Create your views here.
 #-*- coding: UTF-8 -*-
 
-# Create your views here.
 from django.shortcuts import render
 from django.utils import simplejson
 from django.http import HttpResponse
@@ -16,7 +12,16 @@ import arrow
 
 
 def trend(request):
-    return render(request,'trend.html')
+    query_set = BugStatistics.objects.order_by('-date')[:2]
+    statistics = ''
+    if len(query_set) >=2:
+        current = query_set[0]
+        previous = query_set[1]
+        statistics = '目前共发现问题总数{}个(本周新增{}个)，已解决{}(本周解决{}个)，未解决{}个（本周增加{}个）'\
+            .format(current.total,(current.total-previous.total),current.closed,(current.closed-previous.closed),current.open,(current.open-previous.open))
+        print statistics
+
+    return render(request,'trend.html',{'statistics':statistics})
 
 def trend_data(request):
     from django.core import serializers
@@ -42,6 +47,17 @@ def trend_data(request):
     return HttpResponse(json.dumps(result, cls=DjangoJSONEncoder), mimetype="application/json")
 
 def percentage(request):
+    from redmine import get_bugs
+    bug = get_bugs()
+    from models import BugStatistics
+    b = BugStatistics()
+    b.closed = bug['closed']
+    b.open = bug['open']
+    b.total = bug['total']
+    b.date = bug['date']
+    print b
+    b.save()
+
     return render(request,'percentage.html')
 
 def percentage_data(request):
