@@ -9,6 +9,7 @@ from models import BugStatistics
 import bson
 from bson import json_util
 import arrow
+from django.utils.translation import ugettext as _
 
 
 def trend(request):
@@ -20,6 +21,9 @@ def trend(request):
         statistics = '目前共发现问题总数{}个(本周新增{}个)，已解决{}(本周解决{}个)，未解决{}个（本周增加{}个）'\
             .format(current.total,(current.total-previous.total),current.closed,(current.closed-previous.closed),current.open,(current.open-previous.open))
         print statistics
+
+    msg = _('message')
+    print msg
 
     return render(request,'trend.html',{'statistics':statistics})
 

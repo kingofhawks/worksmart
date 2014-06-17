@@ -41,6 +41,7 @@ INSTALLED_APPS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    #'django.middleware.locale.LocaleMiddleware',  #Why enabling this middleware did not work for Django1.6.5,but django doc said should be!
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -66,7 +67,8 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh_CN'
 
 TIME_ZONE = 'UTC'
 
@@ -91,4 +93,3 @@ STATICFILES_DIRS = (
     #define the global static files folder here,default put all under project's static folder!
     os.path.join(BASE_DIR, "static"),
 )
-

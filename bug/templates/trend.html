@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {% load staticfiles %}
+    {% load staticfiles i18n%}
     <title></title>
     <link rel="stylesheet" href="{% static "rickshaw/rickshaw.min.css" %}">
     <script type="text/javascript" src="{% static "jquery/dist/jquery.min.js" %}"></script>
@@ -86,7 +86,7 @@
 </script>
 </head>
 <body>
-<p id="test">Bug Trends</p>
+<p id="test">{% trans "bug_trends" %}</p>
 
 <div id="chart_container">
         <div id="y_axis"></div>

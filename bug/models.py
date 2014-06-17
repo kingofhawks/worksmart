@@ -10,5 +10,7 @@ class BugStatistics(models.Model):
     class Meta:
         ordering = ['date']
 
+    def __str__(self):
+        return 'Date:{} Total:{} Closed:{}'.format(self.date.date(),self.total,self.closed)
 
 
