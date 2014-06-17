@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-17 10:13+0800\n"
+"POT-Creation-Date: 2014-06-17 10:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\views.py:26
+#: .\models.py:6
+msgid "total"
+msgstr "总数"
+
+#: .\models.py:7
+msgid "closed"
+msgstr "已关闭"
+
+#: .\models.py:8
+msgid "open"
+msgstr "打开"
+
+#: .\models.py:9
+msgid "date"
+msgstr "日期"
+
+#: .\models.py:12
+msgid "BugStatistics"
+msgstr "Bug"
+
+#: .\views.py:25
 msgid "message"
 msgstr "中文"
 
