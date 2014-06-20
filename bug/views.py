@@ -1,7 +1,6 @@
 #-*- coding: UTF-8 -*-
 
 from django.shortcuts import render
-from django.utils import simplejson
 from django.http import HttpResponse
 from django.http import Http404
 import json
@@ -48,7 +47,7 @@ def trend_data(request):
     #json.dumps do not work with DateTime object type,need to use DjangoJSONEncoder
 
     from django.core.serializers.json import DjangoJSONEncoder
-    return HttpResponse(json.dumps(result, cls=DjangoJSONEncoder), mimetype="application/json")
+    return HttpResponse(json.dumps(result, cls=DjangoJSONEncoder), content_type="application/json")
 
 def percentage(request):
     from redmine import get_bugs
@@ -80,7 +79,7 @@ def percentage_data(request):
     #json.dumps do not work with DateTime object type,need to use DjangoJSONEncoder
 
     from django.core.serializers.json import DjangoJSONEncoder
-    return HttpResponse(json.dumps(percentage, cls=DjangoJSONEncoder), mimetype="application/json")
+    return HttpResponse(json.dumps(percentage, cls=DjangoJSONEncoder), content_type="application/json")
 
 
 
