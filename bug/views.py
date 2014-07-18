@@ -17,14 +17,22 @@ def trend(request):
     if len(query_set) >=2:
         current = query_set[0]
         previous = query_set[1]
-        statistics = '目前共发现问题总数{}个(本周新增{}个)，已解决{}(本周解决{}个)，未解决{}个（本周增加{}个）'\
-            .format(current.total,(current.total-previous.total),current.closed,(current.closed-previous.closed),current.open,(current.open-previous.open))
+        open_delta = current.open-previous.open
+        total_delta = current.total-previous.total
+        closed_delta = current.closed-previous.closed
+        inc_or_desc = '增加'
+        p = current.closed*100/current.total
+        if open_delta < 0:
+            inc_or_desc = '减少'
+
+        statistics = '目前共发现问题总数{}个(本周新增{}个)，已解决{}个(本周解决{}个)，未解决{}个（本周{}{}个）,完成{}'\
+            .format(current.total, total_delta, current.closed, closed_delta, current.open, inc_or_desc, abs(open_delta), '{}%'.format(p))
         print statistics
 
     msg = _('message')
     print msg
 
-    return render(request,'trend.html',{'statistics':statistics})
+    return render(request, 'trend.html', {'statistics': statistics})
 
 def trend_data(request):
     from django.core import serializers
