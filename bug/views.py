@@ -12,6 +12,17 @@ from django.utils.translation import ugettext as _
 
 
 def trend(request):
+    from redmine import get_bugs
+    bug = get_bugs()
+    from models import BugStatistics
+    b = BugStatistics()
+    b.closed = bug['closed']
+    b.open = bug['open']
+    b.total = bug['total']
+    b.date = bug['date']
+    print b
+    b.save()
+
     query_set = BugStatistics.objects.order_by('-date')[:2]
     statistics = ''
     if len(query_set) >=2:
@@ -33,6 +44,7 @@ def trend(request):
     print msg
 
     return render(request, 'trend.html', {'statistics': statistics})
+
 
 def trend_data(request):
     from django.core import serializers
@@ -57,19 +69,21 @@ def trend_data(request):
     from django.core.serializers.json import DjangoJSONEncoder
     return HttpResponse(json.dumps(result, cls=DjangoJSONEncoder), content_type="application/json")
 
-def percentage(request):
-    from redmine import get_bugs
-    bug = get_bugs()
-    from models import BugStatistics
-    b = BugStatistics()
-    b.closed = bug['closed']
-    b.open = bug['open']
-    b.total = bug['total']
-    b.date = bug['date']
-    print b
-    b.save()
 
-    return render(request,'percentage.html')
+def percentage(request):
+    #from redmine import get_bugs
+    #bug = get_bugs()
+    #from models import BugStatistics
+    #b = BugStatistics()
+    #b.closed = bug['closed']
+    #b.open = bug['open']
+    #b.total = bug['total']
+    #b.date = bug['date']
+    #print b
+    #b.save()
+
+    return render(request, 'percentage.html')
+
 
 def percentage_data(request):
     from django.core import serializers
