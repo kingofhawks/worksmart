@@ -23,9 +23,10 @@ watcher
       log('File', path, 'has been changed');
       //copy file
       var filename = path2.basename(path);
-      var destinationPath = 'G:\\OneDrive\\Workspace\\yycoin\\osgi\\pickup\\'+filename;
+      var destinationPath = 'E:\\workspace\\yycoin\\osgi\\pickup\\'+filename;
       fs.copy(path, destinationPath, function (err) {
         if (err) return console.error(err)
-        console.log(destinationPath+" updated success!")
+        var now = new Date();
+        console.log(destinationPath+" updated success at time:"+now);
       }) // copies file
     })

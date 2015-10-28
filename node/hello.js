@@ -11,3 +11,7 @@ console.log('hello')
     if (err) return console.error(err)
     console.log("success!")
   }) // copies file
+  
+  var data = {};
+  Object.getPrototypeOf(data);
+  
