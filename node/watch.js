@@ -2,6 +2,33 @@ var fs = require('fs-extra')
 var path2 = require('path')
 
 var chokidar = require('chokidar');
+var nconf = require('nconf');
+nconf.argv()
+   .env()
+   .file({ file: 'config/config.json' });
+   
+  //
+  // Set a few variables on `nconf`.
+  //
+  nconf.set('yycoin:jar_depend', '127.0.0.1');
+  nconf.set('yycoin:pickup', 5984);
+
+  //
+  // Get the entire database object from nconf. This will output
+  // { host: '127.0.0.1', port: 5984 }
+  //
+  console.log('foo: ' + nconf.get('foo'));
+  console.log('NODE_ENV: ' + nconf.get('NODE_ENV'));
+  console.log('database: ' + nconf.get('database'));
+
+  //
+  // Save the configuration object to disk
+  //
+  nconf.save(function (err) {
+    fs.readFile('config/config.json', function (err, data) {
+      console.dir(JSON.parse(data.toString()))
+    });
+  });
 
 // One-liner for current directory, ignores .dotfiles
 var watcher = chokidar.watch('D:\\workspace_eclipse-SDK-3.3.2-win32_2\\jar_depend\\pickup', {ignored: /[\/\\]\./});

@@ -5,3 +5,6 @@ npm install chokidar --save
 npm install fb-watchman --save
 
 npm install --save fs-extra
+
+# https://github.com/indexzero/nconf
+npm install nconf --save
