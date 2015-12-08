@@ -1,0 +1,21 @@
+{
+  "name": "worksmart",
+  "version": "1.0.0",
+  "description": "work smart",
+  "main": "hello.js",
+  "dependencies": {
+    "chokidar": "^1.2.0",
+    "fs-extra": "^0.26.0",
+    "mocha": "^2.3.4",
+    "nconf": "^0.8.2",
+    "should": "^7.1.1",
+    "supertest": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

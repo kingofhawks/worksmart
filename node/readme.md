@@ -8,3 +8,7 @@ npm install --save fs-extra
 
 # https://github.com/indexzero/nconf
 npm install nconf --save
+
+### mocha for unit test
+
+> npm install mocha -g
