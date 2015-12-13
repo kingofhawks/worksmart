@@ -22,3 +22,7 @@ npm install superagent --save
 
 > npm install mocha -g
 
+run specific test cases:
+
+> mocha -g re_pattern
+
