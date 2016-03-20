@@ -24,11 +24,11 @@ nconf.argv()
   //
   // Save the configuration object to disk
   //
-  nconf.save(function (err) {
-    fs.readFile('config/config.json', function (err, data) {
-      console.dir(JSON.parse(data.toString()))
-    });
-  });
+//   nconf.save(function (err) {
+//     fs.readFile('config/config.json', function (err, data) {
+//       console.dir(JSON.parse(data.toString()))
+//     });
+//   });
 
 // One-liner for current directory, ignores .dotfiles
 var watcher = chokidar.watch('D:\\workspace_eclipse-SDK-3.3.2-win32_2\\jar_depend\\pickup', {ignored: /[\/\\]\./});
@@ -50,8 +50,15 @@ watcher
       log('File', path, 'has been changed');
       //copy file
       var filename = path2.basename(path);
-      var destinationPath = 'E:\\workspace\\yycoin\\osgi\\pickup\\'+filename;
+      var destinationPath = 'G:\\OneDrive\\Workspace\\yycoin\\osgi\\pickup\\'+filename;
       fs.copy(path, destinationPath, function (err) {
+        if (err) return console.error(err)
+        var now = new Date();
+        console.log(destinationPath+" updated success at time:"+now);
+      }) // copies file
+      
+      var destinationPath2 = 'D:\\workspace_eclipse-SDK-3.3.2-win32_2\\jar_depend\\'+filename;
+      fs.copy(path, destinationPath2, function (err) {
         if (err) return console.error(err)
         var now = new Date();
         console.log(destinationPath+" updated success at time:"+now);
