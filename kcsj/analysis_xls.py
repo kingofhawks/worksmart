@@ -11,13 +11,21 @@ def get_area(scale):
             print e
     return area
 
+
+#清洗总投资数据
+def transform_total(total):
+    if total > 100000000:
+        return total/10000
+    else:
+        return total
+
 print get_area(u'大型|65000.00平方米')
 print get_area(u'中型|4300.00平方米（跨度23米）')
 
 from openpyxl.writer.excel import ExcelWriter
 import pandas as pd
 # use row 2 as column labels
-df = pd.read_excel("2016_jzgc_q1.xls", header=1)
+df = pd.read_excel("2016_kc_q1.xls", header=1)
 # print df
 print df.columns
 # select DF by index(columns)
@@ -46,6 +54,7 @@ df = df.dropna(subset=[u'合同备案编号'])
 df = df[(df[u'备案通过时间']>'2015-12-31') & (df[u'备案通过时间'] <= '2016-03-31')]
 # 新增面积栏位，根据规模及等级分析得来
 df[u'面积'] = df[u'规模及等级'].apply(get_area)
+df[u'总投资（万元）'] = df[u'总投资（万元）'].apply(transform_total)
 print df
 print '项目数 {}'.format(len(df))
 print '合同价格 {}'.format(df[u"合同价格（万元）"].sum())

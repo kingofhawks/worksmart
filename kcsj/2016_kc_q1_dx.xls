@@ -1,0 +1,15 @@
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312"><h1 align="center">
+	资质核验申请表
+</h1><table class="GridView" cellspacing="1" rules="all" border="1" id="ctl00_ContentPlaceHolder1_GridExcel" style="border-width:1px;border-style:solid;width:100%;">
+	<tr class="HeaderStyle" align="center">
+		<td>单项资质核验编号</td><td>审核通过时间</td><td>单项项目名称</td><td>单项项目规模</td><td>单项项目规模数量</td><td>单项项目技术指标</td><td>单项项目地点</td><td>单项项目合同价格</td><td>单项项目总投资</td><td>企业名称</td>
+	</tr><tr class="RowItemsStyle">
+		<td style="vnd.ms-excel.numberformat:@">WS-K-20160128-00001</td><td style="vnd.ms-excel.numberformat:@">2016-1-27</td><td style="vnd.ms-excel.numberformat:@">锡州路西段工程勘察</td><td style="vnd.ms-excel.numberformat:@"><span>小型</span></td><td style="vnd.ms-excel.numberformat:@">1234.00</td><td style="vnd.ms-excel.numberformat:@">新建城市支路</td><td style="vnd.ms-excel.numberformat:@">无锡市崇安区</td><td style="vnd.ms-excel.numberformat:@">1.73</td><td style="vnd.ms-excel.numberformat:@">13843.66</td><td style="vnd.ms-excel.numberformat:@">中国华西工程设计建设有限公司</td>
+	</tr><tr class="RowStyle">
+		<td style="vnd.ms-excel.numberformat:@">WS-K-20160202-00002</td><td style="vnd.ms-excel.numberformat:@">2016-2-2</td><td style="vnd.ms-excel.numberformat:@">500千伏宜兴东输变电工程(勘察）</td><td style="vnd.ms-excel.numberformat:@"><span>大型</span></td><td style="vnd.ms-excel.numberformat:@">1.00</td><td style="vnd.ms-excel.numberformat:@">1*1000MVA</td><td style="vnd.ms-excel.numberformat:@">江苏省宜兴市</td><td style="vnd.ms-excel.numberformat:@">251.05</td><td style="vnd.ms-excel.numberformat:@">33760.00</td><td style="vnd.ms-excel.numberformat:@">中国电力工程顾问集团华东电力设计院有限公司</td>
+	</tr><tr class="RowItemsStyle">
+		<td style="vnd.ms-excel.numberformat:@">WS-K-20160317-00004</td><td style="vnd.ms-excel.numberformat:@">2016-3-16</td><td style="vnd.ms-excel.numberformat:@">明发国际新城商品房项目</td><td style="vnd.ms-excel.numberformat:@"><span>大型</span></td><td style="vnd.ms-excel.numberformat:@">580469.00</td><td style="vnd.ms-excel.numberformat:@">合格</td><td style="vnd.ms-excel.numberformat:@">江苏省-无锡市-惠山区-堰桥街道-陈家桥社区</td><td style="vnd.ms-excel.numberformat:@">87.00</td><td style="vnd.ms-excel.numberformat:@">124864.00</td><td style="vnd.ms-excel.numberformat:@">中国兵器工业北方勘察设计研究院有限公司</td>
+	</tr><tr class="RowStyle">
+		<td style="vnd.ms-excel.numberformat:@">WS-K-20160202-00003</td><td style="vnd.ms-excel.numberformat:@">2016-2-2</td><td style="vnd.ms-excel.numberformat:@">振奋路(上马墩路—锡州路)改扩建工程项目勘察</td><td style="vnd.ms-excel.numberformat:@"><span>小型</span></td><td style="vnd.ms-excel.numberformat:@">888.00</td><td style="vnd.ms-excel.numberformat:@">新建城市支路</td><td style="vnd.ms-excel.numberformat:@">无锡市崇安区</td><td style="vnd.ms-excel.numberformat:@">3.57</td><td style="vnd.ms-excel.numberformat:@">1882.78</td><td style="vnd.ms-excel.numberformat:@">中国华西工程设计建设有限公司</td>
+	</tr>
+</table>
