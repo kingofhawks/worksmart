@@ -25,7 +25,7 @@ print get_area(u'中型|4300.00平方米（跨度23米）')
 from openpyxl.writer.excel import ExcelWriter
 import pandas as pd
 # use row 2 as column labels
-df = pd.read_excel("2016_kc_q1.xls", header=1)
+df = pd.read_excel("201610883424_kc_ht.xls", header=1)
 # print df
 print df.columns
 # select DF by index(columns)
